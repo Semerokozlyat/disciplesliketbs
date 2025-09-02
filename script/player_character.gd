@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 
 
 func play_animation(direction):
-	
+ 	
 	if player_state == "idle":
 		$AnimatedSprite2D.play("idle")
 	if player_state == "walk":
