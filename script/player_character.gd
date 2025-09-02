@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 
 
 func play_animation(direction):
+	
 	if player_state == "idle":
 		$AnimatedSprite2D.play("idle")
 	if player_state == "walk":
@@ -31,3 +32,14 @@ func play_animation(direction):
 		if direction.x == -1:
 			$AnimatedSprite2D.play("w-walk")			
 			
+	if direction.x > 0.5 and direction.y < -0.5:
+		$AnimatedSprite2D.play("ne-walk")
+	if direction.x > 0.5 and direction.y > 0.5:
+		$AnimatedSprite2D.play("se-walk")
+	if direction.x < -0.5 and direction.y > 0.5:
+		$AnimatedSprite2D.play("sw-walk")
+	if direction.x < -0.5 and direction.y < -0.5:
+		$AnimatedSprite2D.play("nw-walk")
+		
+func PlayerCharacter():
+	pass
